@@ -1,0 +1,22 @@
+.content.info-content {
+    position: relative;
+}
+.error-content.info {
+    position: absolute;
+    top: 79px;
+}
+
+.input-time-date input {
+    border-color: #d2d6de;
+    border-radius: 0px;
+    border: 1px solid #cecece;
+    height: 28px;
+    padding: 0px 15px;
+}
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}

@@ -53,6 +53,20 @@
             <li class="{{ (Request::is('product/category') ? 'active' : '') }}"><a href="{{action('Admin\Product\CategoryController@index')}}"><i class="fa fa-circle-o"></i> Product Category</a></li>
           </ul>
         </li>
+          <li class="treeview">
+              <a href="#">
+                  <i class="fa fa-user-plus"></i>
+                  <span>Doctor</span>
+                  <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+              </a>
+              <ul class="treeview-menu">
+
+                  <li class="{{ (Request::is('product/list') ? 'active' : '') }}"><a href="{{action('Admin\Product\ProductController@index')}}"><i class="fa fa-circle-o"></i> Doctors</a></li>
+                  <li class="{{ (Request::is('product/category') ? 'active' : '') }}"><a href="{{action('Admin\Product\CategoryController@index')}}"><i class="fa fa-circle-o"></i> Departments</a></li>
+              </ul>
+          </li>
         <li class="{{ (Request::is('customer/list') ? 'active' : '') }}">
           <a href="{{action('Admin\Customer\CustomerController@index')}}">
             <i class="fa fa-users"></i> <span>Customers</span>

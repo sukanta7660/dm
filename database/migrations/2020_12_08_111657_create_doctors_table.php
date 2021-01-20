@@ -17,8 +17,6 @@ class CreateDoctorsTable extends Migration
             $table->bigIncrements('id');
             $table->UnsignedBigInteger('department_id')->index();
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('No Action')->onUpdate('No Action');
-            $table->UnsignedBigInteger('sub_department_id')->index()->nullable();
-            $table->foreign('sub_department_id')->references('id')->on('sub_departments')->onDelete('No Action')->onUpdate('No Action');
             $table->string('name',100);
             $table->text('degrees');
             $table->double('checkFee')->default(0);

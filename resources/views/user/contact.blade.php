@@ -19,7 +19,7 @@
                 <div class="w-100"></div>
                 <div class="col-md-3 d-flex">
                     <div class="info bg-white p-4">
-                        <p><span>Address:</span>1st floor,Islam plaza,shibgonz,Sylhet</p>
+                        <p><span>Address:</span>1st floor,example,Sylhet</p>
                     </div>
                 </div>
                 <div class="col-md-3 d-flex">

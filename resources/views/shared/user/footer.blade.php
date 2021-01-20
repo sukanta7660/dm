@@ -49,8 +49,8 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><a href="#"><span class="icon icon-map-marker"></span><span class="text">Islam Plaza,Shibgonj,Sylhet</span></a></li>
-                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+01616161551</span></a></li>
+                            <li><a href="#"><span class="icon icon-map-marker"></span><span class="text">example,Sylhet</span></a></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+0167600000</span></a></li>
                             <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@ourdomain.com</span></a></li>
                         </ul>
                     </div>

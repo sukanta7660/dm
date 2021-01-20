@@ -1,17 +1,17 @@
 <?php
 
 return [
-    'watermark' => 'DoorMeds',
+    'watermark' => 'BD-Med',
 
     //Start: Company Info
     'logo' => 'logo.png',
-    'company' =>'DoorMeds',
-    'address' =>'East-Shivgonj',
+    'company' =>'BD-Meds',
+    'address' =>'Example',
     'city' =>'Sylhet-3100, Bangladesh',
     'postCode' =>'3100',
     'country' =>'Bangladesh',
-    'email' =>'info@doormeds.com',
-    'contact' =>'+8801616161551',
+    'email' =>'info@bd-meds.com',
+    'contact' =>'+880167600000',
     //End: Company Info
 
 

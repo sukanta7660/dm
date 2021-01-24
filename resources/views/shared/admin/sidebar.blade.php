@@ -53,7 +53,7 @@
             <li class="{{ (Request::is('product/category') ? 'active' : '') }}"><a href="{{action('Admin\Product\CategoryController@index')}}"><i class="fa fa-circle-o"></i> Product Category</a></li>
           </ul>
         </li>
-          <li class="treeview">
+          <li class="treeview {{ (Request::is('doctors/*', 'doctors') ? 'active' : '') }}">
               <a href="#">
                   <i class="fa fa-user-plus"></i>
                   <span>Doctor</span>
@@ -62,9 +62,9 @@
             </span>
               </a>
               <ul class="treeview-menu">
-
-                  <li class="{{ (Request::is('product/list') ? 'active' : '') }}"><a href="{{action('Admin\Product\ProductController@index')}}"><i class="fa fa-circle-o"></i> Doctors</a></li>
-                  <li class="{{ (Request::is('product/category') ? 'active' : '') }}"><a href="{{action('Admin\Product\CategoryController@index')}}"><i class="fa fa-circle-o"></i> Departments</a></li>
+                
+                <li class="{{ (Request::is('doctors/list') ? 'active' : '') }}"><a href="{{action('Admin\DoctorController@index')}}"><i class="fa fa-circle-o"></i> Doctors</a></li>
+                <li class="{{ (Request::is('doctors/department/list') ? 'active' : '') }}"><a href="{{action('Admin\DepartmentController@index')}}"><i class="fa fa-circle-o"></i> Departments</a></li>
               </ul>
           </li>
         <li class="{{ (Request::is('customer/list') ? 'active' : '') }}">

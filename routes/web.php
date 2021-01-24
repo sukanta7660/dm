@@ -71,6 +71,20 @@ Route::group(['middleware' => 'auth'], function () {
 
      Route::get('admin','Admin\DashboardController@index');
 
+/*----------- Doctors -------------*/
+    Route::get('doctors/list','Admin\DoctorController@index');
+    Route::post('doctors/save','Admin\DoctorController@store');
+    Route::post('doctors/edit','Admin\DoctorController@edit');
+    Route::get('doctors/del/{id}','Admin\DoctorController@del');
+/*----------- /Doctors ------------*/
+
+/*----------- Department -------------*/
+    Route::get('doctors/department/list','Admin\DepartmentController@index');
+    Route::post('doctors/department/save','Admin\DepartmentController@store');
+    Route::post('doctors/department/edit','Admin\DepartmentController@edit');
+    Route::get('doctors/department/del/{id}','Admin\DepartmentController@del');
+/*----------- /Department ------------*/
+
 //----------- Orders --------------*/
     Route::get('order/new','Admin\Orders\PendingController@index');
     Route::get('order/overview/{id}','Admin\Orders\OrderInvoiceController@index');

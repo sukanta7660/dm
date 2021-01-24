@@ -24,7 +24,7 @@ class CreateDoctorsTable extends Migration
             $table->string('mobileNo')->nullable();
             $table->string('time',50);
             $table->longText('description')->nullable();
-            $table->string('specialist',100);
+            $table->string('specialist',100)->nullable();
             $table->string('imageName',150)->default('default.jpg');
             $table->boolean('isVisible')->default(true);
             $table->timestamps();

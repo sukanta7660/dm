@@ -30,7 +30,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="{{action('User\IndexController@index')}}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{action('User\ProductController@index')}}">Shop</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{action('User\ProductController@index')}}">Doctors</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{action('User\DoctorController@index')}}">Doctors</a></li>
                 <li class="nav-item"><a href="{{action('User\StaticPageController@about')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{action('User\ContactController@index')}}" class="nav-link">Contact</a></li>
                 <li class="nav-item cta cta-colored"><a href="{{action('User\ProductCartController@index')}}" class="nav-link"><span class="icon-shopping_cart"></span><span id="cart_item"> </span></a></li>

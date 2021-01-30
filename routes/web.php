@@ -16,6 +16,9 @@ Route::get('/','User\IndexController@index');
 Route::get('about','User\StaticPageController@about');
 Route::get('blog','User\BlogController@index');
 
+Route::get('doctors','User\DoctorController@index');
+Route::get('doctors/dept-wise/{id}/{slug}','User\DoctorController@department_wise');
+Route::get('doctors/appointment/{id}/{slug}','User\DoctorController@appointment_page');
 
 Route::get('products','User\ProductController@index');
 Route::get('all_products','User\ProductController@all_product');

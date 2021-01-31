@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Contact
+    Appointment
 @endsection
 @section('content')
     <div class="hero-wrap hero-bread" style="background-image: url({{asset('public/user_asset/images/bg_6.jpg')}});">
@@ -25,26 +25,42 @@
                         <p><span>Chamber: </span> {{$table->chamberDetails}}</p>
                         <p><span>Check Fee: </span> {{money($table->checkFee)}}</p>
                         <p><span>Time: </span> {{$table->time}}</p>
+
+                        <p class="{{$table->isVisible==1 ? 'bg-success' : 'bg-danger'}} text-white text-center"><span>{{$table->isVisible ? 'Available' : 'Not Available'}}</p>
                 </div>
                 </div>
                 <div class="col-md-9 order-md-last d-flex">
-                    <form action="#" class="bg-white p-5 contact-form">
+                    <form action="{{action('User\DoctorController@get_appointment')}}" method="POST" class="bg-white p-5 contact-form">
+                        @csrf
+                        <input type="hidden" name="doctor_id" value="{{$table->id}}">
+                        @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                {{ session()->get('message') }}
+                            </div>
+                        @endif
                         <h2>Get Your Appointment</h2>
+                        @if ($table->isVisible==1)
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" name="name" class="form-control" placeholder="Patient Name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
+                            <input type="number" name="patient_Age" class="form-control" placeholder="Patient Age Ex: 24">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" name="address" class="form-control" placeholder="Address">
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                            <input type="text" name="number" class="form-control" placeholder="Contact Number Example: 01733251458">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <textarea name="description" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
                         </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit Appointment</button>
+                        </div>
+                        @else
+                        <h3 class="text-warning text-center">Not Available for this time</h3>
+                        @endif
                     </form>
 
                 </div>

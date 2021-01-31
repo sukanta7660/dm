@@ -19,6 +19,7 @@ Route::get('blog','User\BlogController@index');
 Route::get('doctors','User\DoctorController@index');
 Route::get('doctors/dept-wise/{id}/{slug}','User\DoctorController@department_wise');
 Route::get('doctors/appointment/{id}/{slug}','User\DoctorController@appointment_page');
+Route::post('doctor/appointment','User\DoctorController@get_appointment');
 
 Route::get('products','User\ProductController@index');
 Route::get('all_products','User\ProductController@all_product');
@@ -73,6 +74,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'admin'], function () {
 
      Route::get('admin','Admin\DashboardController@index');
+
+/*----------- Appointment -----------*/
+    Route::get('appointment/list/new','Admin\AppointmentController@index');
+    Route::get('appointment/list/check/{id}','Admin\AppointmentController@check');
+    Route::get('appointment/del/{id}','Admin\AppointmentController@del');
+    Route::get('appointment/list/checked','Admin\AppointmentController@checked');
+/*----------- Appointment -----------*/
 
 /*----------- Doctors -------------*/
     Route::get('doctors/list','Admin\DoctorController@index');

@@ -24,6 +24,19 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
+        <li class="treeview {{ (Request::is('appointment/*', 'appointment') ? 'active' : '') }}">
+          <a href="#">
+            <i class="fa fa-arrow-right"></i>
+            <span>Appointment</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ (Request::is('appointment/list/new') ? 'active' : '') }}"><a href="{{action('Admin\AppointmentController@index')}}"><i class="fa fa-circle-o"></i> New</a></li>
+            <li class="{{ (Request::is('appointment/list/checked') ? 'active' : '') }}"><a href="{{action('Admin\AppointmentController@checked')}}"><i class="fa fa-circle-o"></i> Checked</a></li>
+          </ul>
+        </li>
         <li class="treeview {{ (Request::is('order/*', 'order') ? 'active' : '') }}">
           <a href="#">
             <i class="fa fa-cart-plus"></i> <span>Orders</span>

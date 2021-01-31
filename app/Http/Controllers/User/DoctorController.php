@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Appointment;
 use App\Department;
 use App\Doctor;
 use Illuminate\Http\Request;
@@ -28,5 +29,20 @@ class DoctorController extends Controller
     {
         $table = Doctor::find($id);
         return view('user.appointment',compact('table'));
+    }
+
+    public function get_appointment(Request $request)
+    {
+        //dd($request->all());
+
+        $appointment = new Appointment();
+        $appointment->name = $request->name;
+        $appointment->patient_Age = $request->patient_Age;
+        $appointment->address = $request->address;
+        $appointment->number = $request->number;
+        $appointment->description = $request->description;
+        $appointment->doctor_id = $request->doctor_id;
+        $appointment->save();
+        return redirect()->back()->with(['message' => 'Appointment request placed successfully!']);
     }
 }

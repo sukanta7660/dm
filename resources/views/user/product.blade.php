@@ -190,6 +190,8 @@
                 success : function(data){
                     if(data > 0){
                         $('#cart_item').html('[ '+data+' ]');
+                    }else{
+                        $('#cart_item').html('[ 0 ]');
                     }
 
                 }
